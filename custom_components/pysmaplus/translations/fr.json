@@ -1,0 +1,98 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "L'appareil est déjà configuré",
+            "already_in_progress": "Un flux de configuration est déjà en cours",
+            "cannot_connect": "Échec de la connexion. Vérifiez le nom d'hôte ou l'adresse IP.",
+            "cannot_retrieve_device_info": "Connexion réussie, mais impossible de récupérer les informations de l'appareil",
+            "invalid_auth": "Authentification invalide. Vérifiez l'utilisateur/groupe et le mot de passe.",
+            "unknown": "Erreur inattendue"
+        },
+        "error": {
+            "cannot_connect": "Échec de la connexion. Vérifiez le nom d'hôte ou l'adresse IP.",
+            "cannot_retrieve_device_info": "Connexion réussie, mais impossible de récupérer les informations de l'appareil",
+            "invalid_auth": "Authentification invalide. Vérifiez l'utilisateur/groupe et le mot de passe.",
+            "unknown": "Erreur inattendue"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "accesslong": "Interface"
+                },
+                "data_description": {
+                },
+                "description": "## Webconnect\nAppareils compatibles avec le standard Webconnect. Beaucoup d'appareils SMA de fin 2014 à 2023 (p. ex. Sunny Tripower Smart Energy, Sunny Boy Storage).\n\n## EnnexOS\nAppareils SMA plus récents à partir d'environ 2023 (p. ex. Tripower X, EVCharger).\n\n## Compteur Speedwire\nSunny Home Manager 2 ainsi que Energymeter 10/20.\n\n## Speedwire (instable)\nPresque tous les appareils SMA avec connexion réseau. Seule la communication non chiffrée est prise en charge. Le mot de passe du compte \"user\" ou \"installer\" est requis.\nCette variante est connue pour ne pas fonctionner avec tous les appareils. La raison n'est pas claire.",
+                "title": "Configurer SMA Solar"
+            },
+            "details": {
+                "data": {
+                    "group": "Utilisateur ou groupe",
+                    "host": "Hôte",
+                    "password": "Mot de passe",
+                    "ssl": "Utilise un certificat SSL",
+                    "verify_ssl": "Vérifier le certificat SSL"
+                },
+                "data_description": {
+                    "host": "Le nom d'hôte ou l'adresse IP de votre appareil SMA."
+                },
+                "description": "Saisissez les informations de votre appareil SMA.",
+                "title": "Configurer SMA Solar"
+            },
+            "deviceselection": {
+                "data": {
+                    "device": "Appareil"
+                },
+                "data_description": {
+                    "device": "Cas particulier ennexOS :\n\nLes valeurs mesurées sont fournies en deux parties : une pour l'appareil (IGULD:SELF) et une pour l'ensemble de l'installation (Plant:1). Elles peuvent également refléter les données des compteurs d'énergie (EM:0174-XXXXXXXXXX)."
+                },
+                "description": "Les appareils suivants ont été trouvés.",
+                "title": "Sélection de l'appareil"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Mettre à jour la configuration",
+                "data": {
+                    "scaninterval": "Intervalle de mise à jour"
+                },
+                "description": "Après une modification, Home Assistant doit être redémarré manuellement.\n\nDes valeurs inférieures à 5 secondes augmentent considérablement la charge pour Home Assistant et peuvent surcharger les ordinateurs lents.\nDans tous les cas, veuillez désactiver les capteurs qui ne sont pas nécessaires."
+            },
+            "no_update": {
+                "title": "Aucune mise à jour nécessaire",
+                "description": "Il n'y a rien à mettre à jour."
+            }
+        }
+    },
+    "services": {
+        "set_value": {
+            "description": "Définir une valeur.",
+            "fields": {
+                "entity_id": {
+                    "description": "Paramètre à définir.",
+                    "name": "Paramètre"
+                },
+                "value": {
+                    "description": "Valeur.",
+                    "name": "Valeur"
+                }
+            },
+            "name": "Définir un paramètre"
+        },
+        "get_value_range": {
+            "description": "Retourne les réglages autorisés pour un paramètre.",
+            "fields": {
+                "entity_id": {
+                    "description": "Paramètre.",
+                    "name": "Paramètre"
+                }
+            },
+            "name": "Obtenir les réglages"
+        },
+        "run_discovery": {
+            "description": "Tente de découvrir des appareils SMA.",
+            "name": "Lancer la découverte"
+        }
+    }
+}
